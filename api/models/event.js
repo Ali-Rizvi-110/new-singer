@@ -13,10 +13,6 @@ const eventSchema = new mongoose.Schema({
     type: String,
     required: [true, "Must provide startDate"],
   },
-  endDate: {
-    type: String,
-    required: [true, "Must provide endDate"],
-  },
   price: {
     type: Number,
     required: [true, "Must provide price"],
@@ -25,47 +21,30 @@ const eventSchema = new mongoose.Schema({
     type: String,
     required: [true, "Must provide location"],
   },
-  venue: {
-    type: String,
-    required: [true, "Must provide Image"],
-  },
-  status: {
-    type: String,
-    required: [true, "Must provide status"],
-  },
-  category: {
-    type: String,
-    required: [true, "Must provide category"],
-  },
-  organizer: {
-    type: String,
-    required: [true, "Must provide organizer"],
-  },
-  phone: {
-    type: String,
-    required: [true, "Must provide String"],
-  },
-  email: {
-    type: String,
-    required: [true, "Must provide email"],
-  },
-  remainingTickets: {
-    type: String,
-    required: [true, "Must provide remainingTickets"],
-  },
-  address: {
-    type: String,
-    required: [true, "Must provide address"],
-  },
   description: {
     type: String,
     required: [true, "Must provide title"],
   },
-  postImages: {
-    type: [],
+  images: {
+    type: [String],
   },
   fullDescription: {
     type: String,
+  },
+  transportBus: {
+    type: String
+  },
+  transportRail: {
+    type: String
+  },
+  transportAirport: {
+    type: String
+  },
+  hotelDis: {
+    type: String
+  },
+  restaurantDis: {
+    type: String
   }
 });
 

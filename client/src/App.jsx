@@ -9,6 +9,7 @@ import MainDance from './Pages/MainDance'
 import Bhopal from './component/Bhopal'
 import Groove from './component/Groove'
 import Login from './admin/Login';
+import Admin from './admin/Admin';
 
 
 const App = () => {
@@ -28,6 +29,7 @@ const App = () => {
 
 
         <Route path = '/admin' element = {<Login/>} />
+        <Route path = '/admin/dashboard' element = {<Admin/>} />
 
       </Routes>
     </div>
