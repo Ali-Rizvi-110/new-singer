@@ -1,0 +1,35 @@
+.form{
+    width: 100%;
+    height: 100vh;
+    /* background: linear-gradient(to right, #12394a, #044561); */
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2vmax;
+}
+.form1{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.form1 button{
+    width: 35%;
+    align-items: center;
+}
+@media (max-width:600px) {
+    .form1{
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* background-color: red; */
+    }
+    .form1 button{
+        width: 45%;
+        align-items: center;
+    }
+}

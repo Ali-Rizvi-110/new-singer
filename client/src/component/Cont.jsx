@@ -1,0 +1,68 @@
+import React from "react";
+import "./Cont.css";
+
+const Cont = () => {
+  return (
+    <div>
+      <div className="contact1">
+        <img
+          src="https://static.vecteezy.com/system/resources/previews/007/210/080/non_2x/abstract-background-modern-technology-banner-digital-backdrop-cover-graphic-template-wallpaper-free-photo.jpg"
+          alt=""
+          className="image1"
+        />
+        <div className="contact2 mt-5">
+          <h1>Contact Us</h1>
+        </div>
+      </div>
+      <div className="contact3">
+        <div className="contact3-left">
+          <h2>Send Us a Message</h2>
+          <input type="text" placeholder="Name" className="name" />
+          <input type="text" placeholder="Email" className="name" />
+          <input type="text" placeholder="Subject" className="subject" />
+          <textarea
+            name=""
+            id=""
+            cols="30"
+            rows="5"
+            placeholder="Message"
+            className="message"
+          ></textarea>
+          <button>SEND MESSAGE</button>
+        </div>
+        <div className="contact3-right">
+          <h4 className="first">CONTACT US</h4>
+          <h1>Get In Touch!</h1>
+          <p>
+            Proin laoreet nisi vitae pharetra mattis, etiam luctus suscipit.
+            Augue molestie a etiam quis tincidunt est, et efficitur ipsum nunc
+            bibendum ut risus et vehicula proin tempus.
+          </p>
+          <div className="d-flex">
+            <i className="ri-phone-line"></i>
+            <div>
+              <h4>Call Us</h4>
+              <h5>+123-456-1234</h5>
+            </div>
+          </div>
+          <div className="d-flex">
+            <i className="ri-mail-open-line"></i>
+            <div>
+              <h4>Email Us</h4>
+              <h5>hello@awesomesite.com</h5>
+            </div>
+          </div>
+          <div className="d-flex">
+            <i className="ri-map-pin-line"></i>
+            <div>
+              <h4>Office Address</h4>
+              <h5>99 Roving St.,Big City,PKU 23465</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Cont;
