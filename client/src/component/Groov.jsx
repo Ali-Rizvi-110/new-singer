@@ -1,13 +1,38 @@
-import React from 'react'
-import { groove } from './Groovedata';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
+// import { groove } from './Groovedata';
 import { useNavigate } from 'react-router-dom';
 
 const Groov = () => {
     const navigate = useNavigate();
+
+    const [groove, setGroove] = useState({
+      startData: "",
+      title: "",
+      location:"",
+      image: "",
+    });
+
+    const fetchBhopalEvent = async () => {
+      try {
+        const response = await axios.get('http://localhost:4500/api/event/getGrooveEvent');
+        console.log(response.data);
+        if(response.data){
+          setGroove(response.data);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    useEffect(()=>{
+      fetchBhopalEvent();
+    }, [])
+    
   return (
     <div> <div className='boxs1img'>
     <div className='overlayimg'>
-    <img src={`${groove.img}`} alt="" data-aos="zoom-out" />
+    <img src={`http://localhost:4500/api/uploads/${groove.image}`} alt="" data-aos="zoom-out" />
     <button onClick={()=>{
       // console.log("hello", index);
       
@@ -16,16 +41,16 @@ const Groov = () => {
     </div>
     <div className='boxs1info'>
         <div>
-    <h2>{groove.date}</h2>
+    <h2>{groove.startDate}</h2>
     </div>
     <div className='boxs1infoname'>
-    <h1>{groove.title}</h1>
+    <h1>{groove.name}</h1>
     <h6>{groove.location}</h6>
     </div>
     <button onClick={()=>{
       // console.log("hello", index);
       
-      navigate(`/Detailform/${2}`)
+      navigate('/Detailform/getGrooveEvent');
     }} >BUY TICKET</button>
     </div>
     </div>

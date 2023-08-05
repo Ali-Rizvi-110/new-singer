@@ -10,7 +10,12 @@ import Bhopal from './component/Bhopal'
 import Groove from './component/Groove'
 import Login from './admin/Login';
 import Admin from './admin/Admin';
-
+import AddSalsaEvent from './admin/AddSalsaEvent'
+import AddBhopalEvent from './admin/AddBhopalEvent';
+import AddGrooveEvent from './admin/AddGrooveEvent'
+import AddMusicGallery from './admin/AddMusicGallery';
+import AddDanceGallery from './admin/AddDanceGallery'
+import AddHomePageVideos from './admin/AddHomePageVideos'
 
 const App = () => {
   return (
@@ -30,6 +35,12 @@ const App = () => {
 
         <Route path = '/admin' element = {<Login/>} />
         <Route path = '/admin/dashboard' element = {<Admin/>} />
+        <Route path = '/admin/addSalsaEvent' element = {<AddSalsaEvent/>} />
+        <Route path = '/admin/addBhopalEvent' element = {<AddBhopalEvent/>} />
+        <Route path = '/admin/addGrooveEvent' element = {<AddGrooveEvent/>} />
+        <Route path = '/admin/addMusicGallery' element = {<AddMusicGallery/>} />
+        <Route path = '/admin/addDanceGallery' element = {<AddDanceGallery/>} />
+        <Route path = '/admin/addHomePageVideo' element = {<AddHomePageVideos/>} />
 
       </Routes>
     </div>

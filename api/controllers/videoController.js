@@ -1,4 +1,5 @@
 const Video = require('../models/videos');
+const HomePageVideos = require('../models/homepageVideos');
 const path = require('path');
 const fs = require('fs');
 const { error } = require('console');
@@ -44,8 +45,30 @@ const deleteVideo = async (req, res) => {
   }
 }
 
+const addHomePageVideos = async (req, res) => {
+  try {
+    const url = await HomePageVideos.create(req.body);
+    res.status(200).json(url);
+  } catch (error) {
+    console.log(error);
+    res.status(400).json(error);
+  }
+}
+
+const getHomePageVideos = async (req, res) => {
+  try {
+    const urls = await HomePageVideos.find({});
+    res.status(200).json(urls);
+  } catch (error) {
+    console.log(error);
+    res.status(400).json(error);
+  }
+}
+
 module.exports = {
   createVideo,
   getVideo,
-  deleteVideo
+  deleteVideo,
+  addHomePageVideos,
+  getHomePageVideos
 }

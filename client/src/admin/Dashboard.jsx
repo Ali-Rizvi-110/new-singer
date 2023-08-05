@@ -32,9 +32,9 @@ const Dashboard = () => {
 
   return (
     <>
-      <div id="main">
+      <div id="main1">
         <div className="rightNav" ref={first}>
-          <h1 onClick={rightNAV}>
+          <h1 style={{marginLeft: "20px"}} onClick={rightNAV}>
             Dashboard <i className="ri-menu-4-line"></i>
           </h1>
           <div className="txtdash">
@@ -53,19 +53,33 @@ const Dashboard = () => {
                 }}
               >
                 <SubMenu label="Video">
-                  <MenuItem onClick={() => navigate("/admin/addVideo")}>
-                    Add Video
+                  <MenuItem onClick={() => navigate("/admin/addHomePageVideo")}>
+                    Add Video in Home Page
                   </MenuItem>
                   <MenuItem onClick={()=>navigate('/admin/deleteVideo')}> 
                     Delete Video 
                   </MenuItem>
                 </SubMenu>
                 <SubMenu label="Events">
-                  <MenuItem onClick={() => navigate("/admin/addEvent")}>
-                    Add Event
+                  <MenuItem onClick={() => navigate("/admin/addSalsaEvent")}>
+                    Add Salsa Event
+                  </MenuItem>
+                  <MenuItem onClick={() => navigate("/admin/addBhopalEvent")}>
+                    Add Bhopal Event
+                  </MenuItem>
+                  <MenuItem onClick={() => navigate("/admin/addGrooveEvent")}>
+                    Add Groove Event
                   </MenuItem>
                   <MenuItem onClick={() => navigate("/admin/deleteEvent")}>
                     Event Settings
+                  </MenuItem>
+                </SubMenu>
+                <SubMenu label="Gallery">
+                  <MenuItem onClick={() => navigate("/admin/addMusicGallery")}>
+                    Add Music Gallery
+                  </MenuItem>
+                  <MenuItem onClick={() => navigate("/admin/addDanceGallery")}>
+                    Add Dance Gallery
                   </MenuItem>
                 </SubMenu>
                 <SubMenu label="Archive">

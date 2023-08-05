@@ -25,4 +25,7 @@ router.post('/createVideo', authenticateToken, upload.single('thumbnail'), video
 router.get('/getVideos', videoController.getVideo);
 router.delete('/deleteVideo/:id', authenticateToken, videoController.deleteVideo);
 
+router.post('/addHomePageVideo', authenticateToken, videoController.addHomePageVideos);
+router.get('/getHomePageVideos', videoController.getHomePageVideos);
+
 module.exports = router;

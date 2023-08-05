@@ -4,19 +4,44 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import "./Slider2.css";
 import { slider2 } from "./Slider2Data";
+import axios from "axios";
 
 const Slider2 = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [stop, setStop] = useState(false);
+  
+  const [videoUrls, setVideoUrls] = useState([{}]);
+  const [currentUrl, setCurrentUrl] = useState("");
   const changeImage = (step) => {
-    setCurrentImageIndex((prevIndex) => {
-      const newIndex = (prevIndex + step + slider2.length) % slider2.length;
-      return newIndex;
-    });
+    if(videoUrls.length){
+      setCurrentImageIndex((prevIndex) => {
+        const newIndex = (prevIndex + step + videoUrls.length) % videoUrls.length;
+        return newIndex;
+      });
+      setCurrentUrl(videoUrls[currentImageIndex].url);
+    }
   };
 
+  const fetchHomePageVideos = async () => {
+    try {
+      const response = await axios.get('http://localhost:4500/api/video/getHomePageVideos');
+      if(response.data)
+      {
+        setVideoUrls(response.data);
+        console.log(response.data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(()=>{
+    console.log("enter");
+    fetchHomePageVideos();
+  }, [])
+
   useEffect(() => {
-    
+
     if (stop === false) {
       // console.log("enter");
       const interval = setInterval(() => {
@@ -26,9 +51,9 @@ const Slider2 = () => {
         clearInterval(interval);
       };
     }
-  }, [currentImageIndex, stop]);
+  }, [currentUrl, stop]);
 
-  console.log(currentImageIndex, slider2[currentImageIndex].url);
+  // console.log(currentImageIndex, videoUrls[currentImageIndex]);
   return (
     <div
     onClick={()=>{
@@ -45,7 +70,7 @@ const Slider2 = () => {
       >
         
         <ReactPlayer  
-          url={slider2[currentImageIndex].url}
+          url={currentUrl}
           
           width="80%"
           height="100%"

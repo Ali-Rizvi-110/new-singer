@@ -1,5 +1,4 @@
-export const bhopal=
-    {
+export const bhopal = {
         img:"https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fG11c2ljfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
         title:"JHINGJOG bhopal HOUR",
         location:"Chandarpur,California USA",
@@ -18,5 +17,4 @@ export const bhopal=
         airport:"10km",
         hotel:"1km",
         restaurant:"0.5km",
-        
-    }
+}

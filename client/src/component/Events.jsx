@@ -13,9 +13,9 @@ import Groov from './Groov';
 
 const Event = () => {
     const navigate = useNavigate();
-    console.log("event", event)
-    console.log( "bhopal", bhopal)
-    console.log( "groove", groove)
+    // console.log("event", event)
+    // console.log( "bhopal", bhopal)
+    // console.log( "groove", groove)
       useEffect(()=>{
         Aos.init({duration:1000})
       },[])

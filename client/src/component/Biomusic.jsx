@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React,{useEffect, useState} from "react";
 import "./Biomusic.css";
 import { useNavigate } from "react-router-dom";
 
@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 import AOS from "aos";
 import { boidata } from "./Biomusicdata";
+import axios from "axios";
 
 
 const Biomusic = () => {
@@ -14,6 +15,31 @@ const Biomusic = () => {
     useEffect(()=>{
       AOS.init({duration:1000})
     },[])
+
+    const [musicGallery, setMusicGallery] = useState([{}]);
+    const [danceGallery, setDanceGallery] = useState([{}]);
+
+    const fetchGallery = async () => {
+      try {
+        const music = await axios.get('http://localhost:4500/api/gallery/getMusicGallery');
+        const dance = await axios.get('http://localhost:4500/api/gallery/getDanceGallery');
+        if(music.data){
+          setMusicGallery(music.data)
+        }
+        if(dance.data){
+          setDanceGallery(dance.data);
+        }
+        console.log(music.data);
+        console.log(dance.data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    useEffect(()=>{
+      fetchGallery();
+    }, [])
+
 
   return (
     <div>
@@ -78,14 +104,14 @@ const Biomusic = () => {
         <h4 className="text-center fs-2 text-light">GALLERY</h4>
         <div className="slider">
           <div className="slide-track">
-            {boidata.map((music, index) => (
+            {musicGallery.map((music, index) => (
               <div className="slide" key={index}>
                 <div className="box">
-                <img data-aos="zoom-in" src={`${music.music}`} alt="" />
+                <img data-aos="zoom-in" src={`http://localhost:4500/api/uploads/${music.image}`} alt="" />
                 </div>
                 <h4 className="mt-2"  onClick={()=>{
                   navigate(`/Music`)
-                }}>{music.titlm}</h4>
+                }}>{music.title}</h4>
               </div> 
             ))}
           </div>
@@ -162,14 +188,14 @@ const Biomusic = () => {
         <h4 className="text-center fs-2 text-light">GALLERY</h4>
         <div className="slider">
           <div className="slide-track">
-            {boidata.map((dance, index) => (
+            {danceGallery.map((dance, index) => (
               <div className="slide" key={index}>
                 <div className="box">
-                <img data-aos="flip-right" src={`${dance.dance}`} alt="" />
+                <img data-aos="flip-right" src={`http://localhost:4500/api/uploads/${dance.image}`} alt="" />
                 </div>
                 <h4 className="mt-2"  onClick={()=>{
                   navigate(`/Dance`)
-                }}>{dance.titld}</h4>
+                }}>{dance.title}</h4>
               </div>
             ))}
           </div>

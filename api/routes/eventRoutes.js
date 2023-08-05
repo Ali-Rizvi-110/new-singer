@@ -40,4 +40,13 @@ router.get("/getEventsByCat/:cat", eventController.getEventByCat);
 router.get("/getEventById/:id", eventController.getEventById);
 router.put("/updateEvent/:id", authenticateToken, eventController.updateEvent);
 
+router.post('/addSalsaEvent', authenticateToken, multiUpload, eventController.addSalsaEvent);
+router.post('/addBhopalEvent', authenticateToken, multiUpload, eventController.addBhopalEvent);
+router.post('/addGrooveEvent', authenticateToken, multiUpload, eventController.addGrooveEvent);
+
+router.get('/getSalsaEvent', eventController.getSalsaEvent);
+router.get('/getBhopalEvent', eventController.getBhopalEvent);
+router.get('/getGrooveEvent', eventController.getGrooveEvent);
+
+
 module.exports=router;

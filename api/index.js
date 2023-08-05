@@ -4,10 +4,10 @@ const cors = require("cors");
 const blogRoutes = require("./routes/blogRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 const eventRouter = require("./routes/eventRoutes");
+const galleryRouter = require('./routes/galleryRoutes');
 const videoRouter = require("./routes/videoRoutes");
 const paymentRouter = require('./routes/paymentRoutes');
 const archiveRouter = require('./routes/archiveRoutes');
-const galleryRouter = require('./routes/galleryRoutes');
 const path = require("path");
 
 const app = express();
@@ -28,11 +28,11 @@ mongoose
 
 // app.use('/api/blogs', blogRoutes);
 app.use("/api/admin", adminRoutes);
-// app.use("/api/admin", eventRouter);
-// app.use("/api/admin", videoRouter);
+app.use("/api/event", eventRouter);
+app.use('/api/gallery', galleryRouter);
+app.use("/api/video", videoRouter);
 // app.use("/api/payments", paymentRouter);
 // app.use('/api/admin', archiveRouter);
-// app.use('/api/gallery', galleryRouter);
 
 app.use("/api/uploads", express.static(path.join(__dirname, "uploads")));
 

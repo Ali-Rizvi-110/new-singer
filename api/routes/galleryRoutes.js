@@ -17,12 +17,19 @@ const storage = multer.diskStorage({
       const filename = "Gallery" + '-' + uniqueSuffix + '.' + fileExtension;
       cb(null, filename);
     },
-  });
+});
   
 const upload = multer({ storage: storage });
 
 router.post('/addImage', authenticateToken, upload.single('image'), galleryController.addImage);
 router.delete('/deleteImage/:id', authenticateToken, galleryController.deleteImage);
 router.get('/getImages', galleryController.getImages);
+
+router.post('/addDanceGallery', authenticateToken, upload.single('image'), galleryController.addDanceGallery);
+router.post('/addMusicGallery', authenticateToken, upload.single('image'), galleryController.addMusicGallery);
+
+
+router.get('/getMusicGallery', galleryController.getMusicGallery);
+router.get('/getDanceGallery', galleryController.getDanceGallery);
 
 module.exports = router;
