@@ -5,8 +5,10 @@
 }
 .perfomer{
     width: 100%;
+   
     
 }
+
 .perfomer img{
     width: 25%;
     margin-top: 0.8vmax;
@@ -20,36 +22,33 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: white;
+    color: black;
     transform: translateY(6vmax);
   
 }
+.event1 .event{
+    margin-top: 2vmax;
+    background: linear-gradient(to right, red, blue);
+    color: white;
+    border-radius: 2vmax;
+    padding: 0.5vmax 1.5vmax;
+}
+.about{
+    width: 80%;
+}
 
-.event1-1{
-    width: 100%;
-    background-color:#191a1c;
+.event1-2-1{
+    width: 80%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* margin-top: 3vmax; */
-    
-}
-.event1-11{
-    width: 90%;
-    /* margin-top: 2vmax; */
-    
-}
-.event1-21{
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     /* background-color: red; */
 }
 
+
 .venue{
-    width: 30%;
-    margin-top: 2vmax;
+    width: 40%;
+    /* margin-top: 2vmax; */
 }
 .venue h4{
     margin-left: 1vmax;
@@ -58,64 +57,27 @@
 .venue i{
     font-size: 2vmax;
 }
+.tickets{
+    width: 30%;
+    text-align: center;
 
-.event1-2{
-    width: 90%;
-    /* background-color: white; */
-    color: black;
-    margin-top: 2vmax;
-}
-.event1-2-1{
-    display: flex;
-    justify-content: space-evenly;
     
 }
-.event1-2-1 img{
-    width: 50%;
-    height: 60vh;
-    /* border-radius: 1vmax; */
-}
-.about{
-    width: 40%;
-    /* background-color: red; */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    color: white;
-}
-.about h1{
-    color: white;
-}
-.tickets{
-    width: 90%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: black;
+.tickets h3{
+
+    font-size: 2vmax;
+    margin-right: 3vmax;
    
-    border-radius: 1vmax;
 }
 .tickets button{
-   
-    padding: 1vmax 2.5vmax;
-    border-radius: 3vmax;
-    border: none;
-    background-color: black;
+    background: linear-gradient(to right, red, blue);
     color: white;
-    font-size: 2.4vmax;
-}
-.tickets h3{
-   
-    padding: 1vmax 2.5vmax;
-    border-radius: 3vmax;
+    padding: 1vmax 2vmax;
+    border-radius: 2vmax;
+    margin-top: 1vmax;
+    transition: 1s;
     border: none;
-    background-color: black;
-    color: white;
-    font-size: 2.4vmax;
-    text-align: center;
 }
-
-
 .address{
     width: 90%;
     display: flex;
@@ -139,11 +101,12 @@
 .address-right i{
     height: 5vmax;
     font-size: 3vmax;
-    background-color: black;
+    /* background-color: black; */
     padding: 0vmax 1vmax;
     border-radius: 1vmax;
     margin-right: 2vmax;
     cursor: pointer;
+   
 }
 .vanues{
     border-bottom: 1px solid gray;
@@ -177,59 +140,81 @@
     padding: 1vmax;
     display: flex;
 }
+.ri-map-pin-line{
+    color: red;
+}
+.ri-calendar-2-line{
+    color: blue;
+}
+.ri-timer-line{
+    color: greenyellow;
+}
+.ri-flight-takeoff-line{
+    color: turquoise;
+}
+.ri-hotel-line{
+    color: tomato;
+}
+
 
 @media (max-width:600px) {
+    .bgimage{
+        margin-top: 7vmax;
+    }
+
+    
+    .perfomer img{
+        width: 50%;
+        margin-top: 0vmax;
+    }
+    
+    
+    
    
-    .event1{
-        padding-top: 7vmax;
-    }
-    .event1-21{
-        width: 100%;
-        flex-direction: column;
-    }
-   
-    .venue{
-        width: 90%;
-        margin-top: 1.5vmax;
-    }
-    .venue h4{
-        font-size: 2.2vmax;
-    }
-    .venue i{
-        font-size: 3vmax;
+    .event1 .event{
+        transform: translateY(50vmax);
+        font-size: 3.5vmax;
     }
     .event1-2-1{
-        flex-direction: column;
-    }
-    .event1-2-1 img{
-        width: 100%;
-    }
-    .about{
-        width: 100%;
-    }
-    .tickets{      
-        flex-direction: column;      
-    }
-    .tickets button{
-        width: 80%;      
-    }
-    .tickets h3{
-        width: 80%;      
-        margin-right: 6vmax;
-    }
-    .perfomer{
-        width: 100%;
-        display: flex;
+        width: 90%;
         flex-wrap: wrap;
-    }
-    .perfomer img{
-        width: 49%;
-    }
-    .rocking{
-        width: 100%;
-        font-size: 3.7vmax;
+        justify-content: center;
         text-align: center;
     }
+    
+    .venue{
+        width: 80%; 
+       
+    }
+    .venue h4{
+        margin-left: 1vmax;
+        font-size: 2vmax;
+    }
+    .venue i{
+        font-size: 2vmax;
+    }
+    .tickets{
+        width: 80%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    
+        
+    }
+    .tickets h3{
+    
+        font-size: 3vmax;
+        margin-right: 6vmax;
+        margin-top: 1vmax;
+       
+    }
+    .tickets button{
+        padding: 1vmax 3vmax;
+      
+    }
+   
+   
     .address{
         flex-direction: column;
         align-items: center;
@@ -270,64 +255,57 @@
 
 
 @media (min-width:600px) and (max-width:830px) {
-    .event1{
-        padding-top: 3vmax;
+    .bgimage{
+        margin-top: 2.3vmax;
     }
-    .event1-21{
-        width: 100%;
-        flex-direction: column;
+ .perfomer img{
+        width: 50%;
+        margin-top: 0vmax;
     }
-   
-    .venue{
-        width: 90%;
-        margin-top: 1.5vmax;
-    }
-    .venue h4{
-        font-size: 2.2vmax;
-    }
-    .venue i{
-        font-size: 3vmax;
+    .event1 .event{
+        transform: translateY(65vmax);
+        font-size: 4.5vmax;
     }
     .event1-2-1{
-        flex-direction: column;
-    }
-    .event1-2-1 img{
-        width: 100%;
-    }
-    .about{
-        width: 100%;
-    }
-    .about h1{
-   font-size: 4vmax;
+        width: 90%;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
     }
     .about p{
-     font-size: 2vmax;
+        font-size: 2vmax;
     }
-    .about h3{
-     font-size: 2.7vmax;
+    
+    .venue{
+        width: 80%; 
+       
+    }
+    .venue h4{
+        margin-left: 1vmax;
+        font-size: 2vmax;
+    }
+    .venue i{
+        font-size: 2vmax;
     }
     .tickets{
-        flex-direction: column;
-    }
-    .tickets button{
         width: 80%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    
+        
     }
     .tickets h3{
-        width: 80%;
-        margin-right: 4vmax;
+    
+        font-size: 3vmax;
+        margin-right: 6vmax;
+        margin-top: 1vmax;
+       
     }
-    .perfomer{
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .perfomer img{
-        width: 49%;
-    }
-    .rocking{
-        width: 100%;
-        font-size: 3.7vmax;
-        text-align: center;
+    .tickets button{
+        padding: 1vmax 3vmax;
+      
     }
     .address{
         flex-direction: column;
@@ -367,4 +345,23 @@
        align-items: center;
     }
 
+}
+
+@media (min-width:380px) and (max-width:500px) {
+    .event1 .event{
+        transform: translateY(40vmax);
+        font-size: 3vmax;
+    }
+}
+@media (min-width:500px) and (max-width:600px) {
+    .event1 .event{
+        transform: translateY(80vmax);
+        font-size: 5vmax;
+    }
+}
+@media (max-width:300px)  {
+    .event1 .event{
+        transform: translateY(35vmax);
+        font-size: 3vmax;
+    }
 }
