@@ -51,6 +51,12 @@ const Detailform = () => {
           </div>
           <div className="row mt-2">
             <label className="col " htmlFor="">
+              Event Price
+            </label>
+            <h4 className="col"> ${event.price} </h4>
+          </div>
+          <div className="row mt-2">
+            <label className="col " htmlFor="">
               Your Name
             </label>
             <input type="text" className="col" />

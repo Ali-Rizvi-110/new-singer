@@ -81,6 +81,33 @@ const getDanceGallery = async (req, res) => {
     }
 }
 
+const deleteMusicGalleryImage = async (req, res) => {
+    try {
+        const img = await MusicGallery.findByIdAndDelete(req.params.id);
+        const imgPath = path.join(__dirname, '..', 'uploads', img.image);
+        fs.unlink(imgPath, (err)=>{
+            if(err)console.log(err);
+        })
+        res.status(200).json(img);
+    } catch (error) {
+        console.log(error);
+        res.status(400).json(error);
+    }
+}
+const deleteDanceGalleryImage = async (req, res) => {
+    try {
+        const img = await DanceGallery.findByIdAndDelete(req.params.id);
+        const imgPath = path.join(__dirname, '..', 'uploads', img.image);
+        fs.unlink(imgPath, (err)=>{
+            if(err)console.log(err);
+        })
+        res.status(200).json(img);
+    } catch (error) {
+        console.log(error);
+        res.status(400).json(error);
+    }
+}
+
 module.exports = {
     addImage,
     deleteImage,
@@ -88,5 +115,7 @@ module.exports = {
     addDanceGallery,
     addMusicGallery,
     getDanceGallery,
-    getMusicGallery
+    getMusicGallery,
+    deleteMusicGalleryImage,
+    deleteDanceGalleryImage
 }

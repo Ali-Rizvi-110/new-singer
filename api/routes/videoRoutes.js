@@ -27,5 +27,6 @@ router.delete('/deleteVideo/:id', authenticateToken, videoController.deleteVideo
 
 router.post('/addHomePageVideo', authenticateToken, videoController.addHomePageVideos);
 router.get('/getHomePageVideos', videoController.getHomePageVideos);
+router.delete('/deleteHomePageVideo/:id', videoController.deleteHomePageVideo);
 
 module.exports = router;

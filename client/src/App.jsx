@@ -16,6 +16,8 @@ import AddGrooveEvent from './admin/AddGrooveEvent'
 import AddMusicGallery from './admin/AddMusicGallery';
 import AddDanceGallery from './admin/AddDanceGallery'
 import AddHomePageVideos from './admin/AddHomePageVideos'
+import AddDashboardEvent from './admin/AddDashboardEvent';
+import DeleteHomePageVideo from './admin/DeleteHomePageVideo'
 
 const App = () => {
   return (
@@ -41,6 +43,8 @@ const App = () => {
         <Route path = '/admin/addMusicGallery' element = {<AddMusicGallery/>} />
         <Route path = '/admin/addDanceGallery' element = {<AddDanceGallery/>} />
         <Route path = '/admin/addHomePageVideo' element = {<AddHomePageVideos/>} />
+        <Route path = '/admin/addDashboardEvent' element = {<AddDashboardEvent/>} />
+        <Route path = '/admin/deleteHomePageVideos' element = {<DeleteHomePageVideo />} />
 
       </Routes>
     </div>

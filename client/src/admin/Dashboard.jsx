@@ -56,7 +56,7 @@ const Dashboard = () => {
                   <MenuItem onClick={() => navigate("/admin/addHomePageVideo")}>
                     Add Video in Home Page
                   </MenuItem>
-                  <MenuItem onClick={()=>navigate('/admin/deleteVideo')}> 
+                  <MenuItem onClick={()=>navigate('/admin/deleteHomePageVideos')}> 
                     Delete Video 
                   </MenuItem>
                 </SubMenu>
@@ -70,6 +70,10 @@ const Dashboard = () => {
                   <MenuItem onClick={() => navigate("/admin/addGrooveEvent")}>
                     Add Groove Event
                   </MenuItem>
+                  <MenuItem onClick={() => navigate("/admin/addDashboardEvent")}>
+                    Add Dashboard Event
+                  </MenuItem>
+
                   <MenuItem onClick={() => navigate("/admin/deleteEvent")}>
                     Event Settings
                   </MenuItem>

@@ -8,16 +8,9 @@ const GrooveEvent = require('../models/grooveEvent');
 
 const addEvent = async (req, res) => {
     try {
-      let image;
+      let image = req.file.filename;
       let event = req.body;
-      let postImages = [];
-      const images = req.files;
-      images.forEach(element => {
-        if(element.fieldname==="image")
-            image = element.filename;
-        else postImages.push(element.filename);
-      });
-      event = {...event, image: image, postImages: postImages};
+      event = {...event, image: image};
       console.log("event", event);
       const insert = await Event.create(event);
       res.status(200).json({ message: "event added successfully"});
@@ -264,5 +257,6 @@ const addEvent = async (req, res) => {
     addSalsaEvent,
     getGrooveEvent,
     getSalsaEvent,
-    getBhopalEvent
+    getBhopalEvent,
+    addEvent
   }

@@ -65,10 +65,21 @@ const getHomePageVideos = async (req, res) => {
   }
 }
 
+const deleteHomePageVideo = async (req, res) => {
+  try {
+    const video = await HomePageVideos.findByIdAndDelete(req.params.id);
+    res.status(200).json(video);
+  } catch (error) {
+    console.log(error);
+    res.status(400).json(error);
+  }
+}
+
 module.exports = {
   createVideo,
   getVideo,
   deleteVideo,
   addHomePageVideos,
-  getHomePageVideos
+  getHomePageVideos,
+  deleteHomePageVideo
 }

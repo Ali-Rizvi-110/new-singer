@@ -1,53 +1,36 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const eventSchema = new mongoose.Schema({
   image: {
     type: String,
-    required: [true, "Must provide image"],
+    required: [true, "Image is required"]
   },
   name: {
     type: String,
-    required: [true, "Must provide name"],
+    required: [true, "Name is required"]
   },
-  startDate: {
+  category: {
     type: String,
-    required: [true, "Must provide startDate"],
+    required: [true, "Category is required"]
   },
-  price: {
-    type: Number,
-    required: [true, "Must provide price"],
-  },
-  location: {
+  address: {
     type: String,
-    required: [true, "Must provide location"],
+    required: [true, "Address is required"]
   },
   description: {
     type: String,
-    required: [true, "Must provide title"],
+    required: [true, "Description is required"]
   },
-  images: {
-    type: [String],
-  },
-  fullDescription: {
+  btnPlaceHolder: {
     type: String,
+    required: [true, "Button Placeholder is required"]
   },
-  transportBus: {
-    type: String
-  },
-  transportRail: {
-    type: String
-  },
-  transportAirport: {
-    type: String
-  },
-  hotelDis: {
-    type: String
-  },
-  restaurantDis: {
-    type: String
+  pathToPage: {
+    type: String,
+    required: [true, "Path to Page is required"]
   }
 });
 
-const Event = mongoose.model("Event", eventSchema, "events");
+const Event = mongoose.model('Event', eventSchema, 'events');
 
 module.exports = Event;
