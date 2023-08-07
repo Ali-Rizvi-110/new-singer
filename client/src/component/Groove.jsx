@@ -32,7 +32,6 @@ const Groove = () => {
       const response = await axios.get(
         "http://localhost:4500/api/event/getGrooveEvent"
       );
-      console.log(response.data);
       if (response.data) {
         setGroove(response.data);
       }
@@ -44,10 +43,9 @@ const Groove = () => {
   useEffect(() => {
     fetchGrooveEvent();
   }, []);
-
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="event1">
         <div className="bgimage">
         <div onLoad={my} ref={myref} className="perfomer">
@@ -101,7 +99,7 @@ const Groove = () => {
         <div className="address">
           <div className="address-left">
             <h2>FIND US ON GOOGLE MAP</h2>
-            <img src={groove.map} alt="" />
+            <img src="" alt="" />
           </div>
           <div className="address-right">
             <h2>TRAVELING INFORMATION</h2>

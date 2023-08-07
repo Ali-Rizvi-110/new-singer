@@ -34,8 +34,12 @@ const multiUpload = (req, res, next) => {
   
 
 router.post("/addEvent", authenticateToken, upload.single('image'), eventController.addEvent);
+router.get("/getDashboardEvents", eventController.getDashboardEvents);
+router.delete('/deleteDashboardEvent/:id', authenticateToken, eventController.deleteDashboardEvent);
+
+
 router.get("/showEvents", eventController.getAllEvents);
-router.delete("/deleteEvent/:id/:ok", authenticateToken, eventController.deleteEvent);
+// router.delete("/deleteEvent/:id/:ok", authenticateToken, eventController.deleteEvent);
 router.get("/getEventsByCat/:cat", eventController.getEventByCat);
 router.get("/getEventById/:id", eventController.getEventById);
 router.put("/updateEvent/:id", authenticateToken, eventController.updateEvent);

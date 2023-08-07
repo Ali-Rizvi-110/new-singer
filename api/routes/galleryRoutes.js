@@ -32,4 +32,7 @@ router.post('/addMusicGallery', authenticateToken, upload.single('image'), galle
 router.get('/getMusicGallery', galleryController.getMusicGallery);
 router.get('/getDanceGallery', galleryController.getDanceGallery);
 
+router.delete('/deleteMusicGalleryImage/:id', authenticateToken, galleryController.deleteMusicGalleryImage);
+router.delete('/deleteDanceGalleryImage/:id', authenticateToken, galleryController.deleteDanceGalleryImage);
+
 module.exports = router;

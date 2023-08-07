@@ -10,7 +10,7 @@ const Slider2 = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [stop, setStop] = useState(false);
   
-  const [videoUrls, setVideoUrls] = useState([{}]);
+  const [videoUrls, setVideoUrls] = useState([]);
   const [currentUrl, setCurrentUrl] = useState("");
   const changeImage = (step) => {
     if(videoUrls.length){
@@ -36,7 +36,7 @@ const Slider2 = () => {
   }
 
   useEffect(()=>{
-    console.log("enter");
+    // console.log("enter");  
     fetchHomePageVideos();
   }, [])
 

@@ -20,6 +20,46 @@ const addEvent = async (req, res) => {
     }
   };
 
+   // Controller for deleting an event
+   const deleteDashboardEvent = async (req, res) => {
+    const eventId = req.params.id;
+    const ok = req.params.ok;
+    console.log(eventId, ok);
+    try {
+      const event = await Event.findByIdAndDelete(eventId);
+      if(ok=="1")
+      {
+        const firstPath = path.join(__dirname, '..', 'uploads', event.image);
+        fs.unlink(firstPath, (error)=>{
+          if(error)console.log(error);
+          else console.log("image deleted", firstPath);
+        })
+        event.postImages.forEach((img)=>{
+          const filePath = path.join(__dirname, '..', 'uploads', img);
+          console.log(filePath);
+          fs.unlink(filePath, (err)=>{
+            if(err)console.log(err)
+            else console.log(filePath, "Deleted");
+          })
+        })
+      }
+      res.status(200).json({ message: 'Event deleted successfully' });
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ message: 'Error deleting event' });
+    }
+  };
+
+  const getDashboardEvents = async (req, res) => {
+    try {
+      const events = await Event.find({});
+      res.status(200).json(events);
+    } catch (error) {
+      console.log(error);
+      res.status(400).json(error);
+    }
+  } 
+
   const addSalsaEvent = async (req, res) => {
     try {
       let image;
@@ -175,36 +215,6 @@ const addEvent = async (req, res) => {
   }
 
   
-  // Controller for deleting an event
-  const deleteEvent = async (req, res) => {
-    const eventId = req.params.id;
-    const ok = req.params.ok;
-    console.log(eventId, ok);
-    try {
-      const event = await Event.findByIdAndDelete(eventId);
-      if(ok=="1")
-      {
-        const firstPath = path.join(__dirname, '..', 'uploads', event.image);
-        fs.unlink(firstPath, (error)=>{
-          if(error)console.log(error);
-          else console.log("image deleted", firstPath);
-        })
-        event.postImages.forEach((img)=>{
-          const filePath = path.join(__dirname, '..', 'uploads', img);
-          console.log(filePath);
-          fs.unlink(filePath, (err)=>{
-            if(err)console.log(err)
-            else console.log(filePath, "Deleted");
-          })
-        })
-      }
-      res.status(200).json({ message: 'Event deleted successfully' });
-    } catch (error) {
-      console.log(error);
-      res.status(500).json({ message: 'Error deleting event' });
-    }
-  };
-  
   // Controller for fetching events by category
   const getEventByCat = async (req, res) => {
     const category = req.params.cat;
@@ -247,9 +257,10 @@ const addEvent = async (req, res) => {
 
   module.exports = {
     addEvent,
+    getDashboardEvents,
+    deleteDashboardEvent,
     getAllEvents,
     getEventByCat,
-    deleteEvent,
     getEventById,
     updateEvent,
     addBhopalEvent,
@@ -257,6 +268,5 @@ const addEvent = async (req, res) => {
     addSalsaEvent,
     getGrooveEvent,
     getSalsaEvent,
-    getBhopalEvent,
-    addEvent
+    getBhopalEvent
   }

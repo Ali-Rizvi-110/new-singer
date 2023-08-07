@@ -1,12 +1,10 @@
-
-
 .musicbox{
     width: 100%;
     height: auto;  
-    background-color:#191a1c;
+    background-color:white;
     font-family: 'Poppins';
     padding-top: 8vmax; 
-    color: white;
+    color: black;
     overflow-x: hidden; 
 }
 .musicbox h1{
@@ -101,7 +99,6 @@ align-items: center;
 .workshops .work{
     width: 100%;
     height: 100%;
-    /* background-color:blue; */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -140,15 +137,16 @@ align-items: center;
     .musicbox{
         width: 100%;
         height: auto;  
-        background-color:#191a1c;
+        /* background-color:#191a1c; */
         font-family: 'Poppins';
         padding-top: 15vmax; 
-        color: white;
+        color: black;
         overflow-x: hidden; 
     }
     .musicbox h1{
         text-align: center;
         margin-top: 2vmax;
+        font-size: 5vmax;
     }
     
     .musicbox .musicimage{
@@ -163,7 +161,7 @@ align-items: center;
     }
     
     .arraydata{
-        width: 60%;
+        width: 90%;
         height: 100%;
     }
     .musicimage img{
@@ -198,15 +196,16 @@ align-items: center;
     }
      .audio{
         width: 100%;
-        height: 40vh;
+        height: 100vh;
         /* background-color: aqua; */
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-evenly;
         
     }
     .audio .imgaudio{
-        width: 25%;
-        height: 100%;
+        width: 80%;
+        height: 30vh;
         position: relative;
         margin-bottom: 2vmax;
         /* background-color: rgb(233, 41, 41); */
@@ -215,14 +214,10 @@ align-items: center;
     }
     .imgaudio img{
         width: 100%;
-        height: 100%;
+        height: 30vh;
         position: absolute;
     }
-    .imgaudio iframe{
-        width: 100%;
-        height: 110%;
-       
-    }
+  
     .imgaudio audio{
         width: 90%;
         height: 100%;
@@ -274,67 +269,134 @@ align-items: center;
 
 @media (min-width:600px) and (max-width:830px) {
     .musicbox{
-        height: auto;
-        flex-wrap: wrap;
-    }
-
-    .musicbox .imagesong{
-        width: 90%;
-        height: auto;
-        margin-top: 0vmax;
-        margin-left: 2vmax;
+        width: 100%;
+        height: auto;  
        
-        }
-        .imagesong .audio{
-           
-            height:75vmax;
-            flex-wrap: wrap;
-            align-items: center;
-           
-        }
-        .audio .imgaudio{
-            width: 90%;
-            height: 33%;
-            margin-left: 2vmax;
-            margin-top: 1vmax;
-          
-           
-        }
-
-
+        font-family: 'Poppins';
+        padding-top: 15vmax; 
+        color: black;
+        overflow-x: hidden; 
+    }
+    .musicbox h1{
+        text-align: center;
+        margin-top: 2vmax;
+        font-size: 5vmax;
+    }
+    
     .musicbox .musicimage{
-        height: 40vmax;
-        overflow-y: scroll;
+        width: 100%;
+        height:80vh ;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 1vmax;
+        /* background-color: red; */
+        /* overflow-y: scroll; */
+       
+    }
+    
+    .arraydata{
+        width: 90%;
+        height: 100%;
+        /* background-color: red; */
     }
     .musicimage img{
-        width: 45%;
+        width: 33%;
+        height: 33%;
+        cursor: pointer;
+        
+    }
+    .imagedata {
+        width: 80%;
+        height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+    .imagedata1{
+        width: 100%;
+        height: 95%;
+       
+    }
+    .imagedata1 .bdahoja{
+        width: 90%;
+        height: 100%;
+    }
+    .imagedata .ri-close-circle-line{
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: black;
+    }
+     .audio{
+        width: 100%;
+        height: 100vh;
+        
+        display: flex;
+        flex-wrap: wrap;
+        /* justify-content: space-evenly; */
+        
+    }
+    .audio .imgaudio{
+        width: 80%;
+        height: 30vh;
+        position: relative;
+        margin-bottom: 2vmax;
+      
+       
     }
     .imgaudio img{
         width: 100%;
-        /* height: 20vmax; */
+        height: 30vh;
         position: absolute;
     }
-    .music-content{
-        width: 90%;
-        height: 60%;
-        margin-top: 15vmax;
-    }
-    .music-content h6{
-        font-size: 1.7vmax;
-    }
-    .music-content p{
-        font-size: 2vmax;
-    }
-    .imagedata1 .bdahoja{
-        width: 85%;
     
+    .imgaudio audio{
+        width: 90%;
+        height: 100%;
+        margin-left: 1vmax;
+        opacity: 0;
     }
-    .music-content textarea{
-        width: 95%;
-        border: 1px solid gray;
+    .imgaudio:hover > audio{
+        opacity: 1;
     }
-    .music-content button{
-        padding: 0.5vmax 4vmax;
-        font-size: 1.9vmax;
+    .workshops{
+        width: 100%;
+        height: 100vh;
+    }
+    .workshops .work{
+        width: 100%;
+        height: 100%;
+        /* background-color:blue; */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    
+        
+    }
+    .work img{
+        width: 40%;
+        height: 40%;
+    }
+    .corporate{
+        width: 100%;
+        height: 160vh;
+    }
+    .corporate .corpo{
+        width: 100%;
+        height: 100%;
+        /* background-color:blue; */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    
+        
+    }
+    .corpo img{
+        width: 80%;
+        height: 22%;
+        margin-top: 1vmax;
     }
 }

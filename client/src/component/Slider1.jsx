@@ -9,7 +9,7 @@ const Slider1 = () => {
   const navigate = useNavigate();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const token = sessionStorage.getItem("token");
-  const [events, setEvents] = useState([{}]);
+  const [events, setEvents] = useState([]);
 
   const fetchDashboardEvents = async () => {
     try {
@@ -39,7 +39,8 @@ const Slider1 = () => {
   useEffect(() => {
     // Automatic slideshow every 1 second
     const interval = setInterval(() => {
-      changeImage(1);
+      if(events.length)
+        changeImage(1);
     }, 3000);
 
     return () => {
@@ -49,7 +50,7 @@ const Slider1 = () => {
 
   return (
     <div>
-      <div className="image-sliders">
+      { events.length && <div className="image-sliders">
         <img
           src={`http://localhost:4500/api/uploads/${events[currentImageIndex].image}`}
           alt={`Image ${currentImageIndex + 1}`}
@@ -78,7 +79,7 @@ const Slider1 = () => {
             <i className="ri-arrow-drop-right-line fs-1"></i>
           </button>
         </div>
-      </div>
+      </div> }
     </div>
   );
 };

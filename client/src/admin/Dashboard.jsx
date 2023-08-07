@@ -73,7 +73,9 @@ const Dashboard = () => {
                   <MenuItem onClick={() => navigate("/admin/addDashboardEvent")}>
                     Add Dashboard Event
                   </MenuItem>
-
+                  <MenuItem onClick={() => navigate("/admin/deleteDashboardEvent")}>
+                    Delete Dashboard Event
+                  </MenuItem>
                   <MenuItem onClick={() => navigate("/admin/deleteEvent")}>
                     Event Settings
                   </MenuItem>
@@ -82,17 +84,16 @@ const Dashboard = () => {
                   <MenuItem onClick={() => navigate("/admin/addMusicGallery")}>
                     Add Music Gallery
                   </MenuItem>
+                  <MenuItem onClick={() => navigate("/admin/deleteMusicGalleryImages")}>
+                    Delete Music Gallery Images
+                  </MenuItem>
                   <MenuItem onClick={() => navigate("/admin/addDanceGallery")}>
                     Add Dance Gallery
                   </MenuItem>
-                </SubMenu>
-                <SubMenu label="Archive">
-                  <MenuItem onClick={() => navigate("/admin/archiveTable")}>
-                    Archive Table
+                  <MenuItem onClick={() => navigate("/admin/deleteDanceGalleryImages")}>
+                    Delete Dance Gallery images
                   </MenuItem>
                 </SubMenu>
-                <MenuItem> Documentation </MenuItem>
-                <MenuItem> Calendar </MenuItem>
                 <MenuItem onClick={logout}> Logout </MenuItem>
               </Menu>
             </Sidebar>

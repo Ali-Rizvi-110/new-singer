@@ -7,7 +7,7 @@ const Salsa = () => {
 
   // Example event data (replace this with your actual event data)
   const initialEvent = {
-    image: 'event-image.jpg',
+    image: '',
     date: 'Event Date',
     title: 'Event Title',
     location: 'Event Location',
@@ -36,7 +36,7 @@ const Salsa = () => {
       {event && (
         <div className='boxs1img'>
           <div className='overlayimg'>
-            <img src={`http://localhost:4500/api/uploads/${event.image}`} alt="" data-aos="zoom-out" />
+            { event.image !="" &&  <img src={`http://localhost:4500/api/uploads/${event.image}`} alt="" data-aos="zoom-out" /> }
             <button onClick={() => {
               navigate(`/salsa`);
             }}>View More</button>

@@ -16,8 +16,8 @@ const Biomusic = () => {
       AOS.init({duration:1000})
     },[])
 
-    const [musicGallery, setMusicGallery] = useState([{}]);
-    const [danceGallery, setDanceGallery] = useState([{}]);
+    const [musicGallery, setMusicGallery] = useState([]);
+    const [danceGallery, setDanceGallery] = useState([]);
 
     const fetchGallery = async () => {
       try {

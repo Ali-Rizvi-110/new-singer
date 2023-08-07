@@ -32,7 +32,7 @@ const Groov = () => {
   return (
     <div> <div className='boxs1img'>
     <div className='overlayimg'>
-    <img src={`http://localhost:4500/api/uploads/${groove.image}`} alt="" data-aos="zoom-out" />
+     <img src={ groove.image==""? "" : `http://localhost:4500/api/uploads/${groove.image}`} alt="" data-aos="zoom-out" />
     <button onClick={()=>{
       // console.log("hello", index);
       

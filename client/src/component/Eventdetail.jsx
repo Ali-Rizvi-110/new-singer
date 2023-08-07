@@ -99,7 +99,7 @@ const Salsa = () => {
         <div className="address">
           <div className="address-left">
             <h2>FIND US ON GOOGLE MAP</h2>
-            <img src={salsa.map} alt="" />
+            <img src="" alt="" />
           </div>
           <div className="address-right">
             <h2>TRAVELING INFORMATION</h2>

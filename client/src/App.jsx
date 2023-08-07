@@ -18,6 +18,9 @@ import AddDanceGallery from './admin/AddDanceGallery'
 import AddHomePageVideos from './admin/AddHomePageVideos'
 import AddDashboardEvent from './admin/AddDashboardEvent';
 import DeleteHomePageVideo from './admin/DeleteHomePageVideo'
+import DeleteMusicGalleryImage from './admin/DeleteMusicGalleryImage'
+import DeleteDanceGalleryImage from './admin/DeleteDanceGalleryImage'
+import DeleteDashboardEvents from './admin/DeleteDashboardEvents'
 
 const App = () => {
   return (
@@ -44,7 +47,10 @@ const App = () => {
         <Route path = '/admin/addDanceGallery' element = {<AddDanceGallery/>} />
         <Route path = '/admin/addHomePageVideo' element = {<AddHomePageVideos/>} />
         <Route path = '/admin/addDashboardEvent' element = {<AddDashboardEvent/>} />
+        <Route path = '/admin/deleteDashboardEvent' element = {<DeleteDashboardEvents/>} />
         <Route path = '/admin/deleteHomePageVideos' element = {<DeleteHomePageVideo />} />
+        <Route path = '/admin/deleteMusicGalleryImages' element = {<DeleteMusicGalleryImage />} />
+        <Route path = '/admin/deleteDanceGalleryImages' element = {<DeleteDanceGalleryImage />} />
 
       </Routes>
     </div>
