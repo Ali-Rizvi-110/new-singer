@@ -21,6 +21,7 @@ import DeleteHomePageVideo from './admin/DeleteHomePageVideo'
 import DeleteMusicGalleryImage from './admin/DeleteMusicGalleryImage'
 import DeleteDanceGalleryImage from './admin/DeleteDanceGalleryImage'
 import DeleteDashboardEvents from './admin/DeleteDashboardEvents'
+import Enquiry from './admin/Enquiry'
 
 const App = () => {
   return (
@@ -51,6 +52,8 @@ const App = () => {
         <Route path = '/admin/deleteHomePageVideos' element = {<DeleteHomePageVideo />} />
         <Route path = '/admin/deleteMusicGalleryImages' element = {<DeleteMusicGalleryImage />} />
         <Route path = '/admin/deleteDanceGalleryImages' element = {<DeleteDanceGalleryImage />} />
+        <Route path = '/admin/enquiry' element = {<Enquiry />} />
+
 
       </Routes>
     </div>

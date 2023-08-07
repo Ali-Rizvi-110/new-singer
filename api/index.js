@@ -6,6 +6,7 @@ const adminRoutes = require("./routes/adminRoutes");
 const eventRouter = require("./routes/eventRoutes");
 const galleryRouter = require('./routes/galleryRoutes');
 const videoRouter = require("./routes/videoRoutes");
+const contactRouter = require('./routes/contactRoutes');
 const paymentRouter = require('./routes/paymentRoutes');
 const archiveRouter = require('./routes/archiveRoutes');
 const path = require("path");
@@ -31,6 +32,7 @@ app.use("/api/admin", adminRoutes);
 app.use("/api/event", eventRouter);
 app.use('/api/gallery', galleryRouter);
 app.use("/api/video", videoRouter);
+app.use('/api/contact', contactRouter);
 // app.use("/api/payments", paymentRouter);
 // app.use('/api/admin', archiveRouter);
 

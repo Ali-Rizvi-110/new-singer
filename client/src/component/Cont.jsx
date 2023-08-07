@@ -1,7 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Cont.css";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Cont = () => {
+
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
+  const handleSubmit = async () => {
+    // Do something with data, e.g., send to server
+    try {
+      const response = await axios.post('http://localhost:4500/api/contact/submitForm', formData);
+      console.log("Form submitted:", formData);
+      window.alert('Thanks for visiting us!');
+      navigate('/');
+    } catch (error) {
+      console.log(error);
+    }
+
+  };
+
+  // useEffect(()=>{
+  //   console.log(formData);
+  // }, [formData])
+
   return (
     <div>
       <div className="contact1">
@@ -15,20 +48,42 @@ const Cont = () => {
         </div>
       </div>
       <div className="contact3">
-        <div className="contact3-left">
+      <div className="contact3-left">
           <h2>Send Us a Message</h2>
-          <input type="text" placeholder="Name" className="name" />
-          <input type="text" placeholder="Email" className="name" />
-          <input type="text" placeholder="Subject" className="subject" />
+          <input
+            type="text"
+            placeholder="Name"
+            className="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            placeholder="Email"
+            className="name"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            placeholder="Subject"
+            className="subject"
+            name="subject"
+            value={formData.subject}
+            onChange={handleChange}
+          />
           <textarea
-            name=""
-            id=""
+            name="message"
             cols="30"
             rows="5"
             placeholder="Message"
             className="message"
+            value={formData.message}
+            onChange={handleChange}
           ></textarea>
-          <button>SEND MESSAGE</button>
+          <button onClick={handleSubmit}>SEND MESSAGE</button>
         </div>
         <div className="contact3-right">
           <h4 className="first">CONTACT US</h4>

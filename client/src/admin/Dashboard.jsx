@@ -94,6 +94,9 @@ const Dashboard = () => {
                     Delete Dance Gallery images
                   </MenuItem>
                 </SubMenu>
+                <SubMenu label="Enquiry" >
+                  <MenuItem onClick={()=>navigate('/admin/enquiry')} > All Enquiries </MenuItem>
+                </SubMenu>
                 <MenuItem onClick={logout}> Logout </MenuItem>
               </Menu>
             </Sidebar>

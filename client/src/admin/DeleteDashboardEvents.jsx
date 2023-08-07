@@ -4,14 +4,15 @@ import axios from 'axios';
 
 const DeleteDashboardEvents = () => {
   const [events, setEvents] = useState([]);
-  console.log(token);
+  const token = sessionStorage.getItem('token');
   const fetchEvents = async () => {
     try {
       const response = await axios.get(
         'http://localhost:4500/api/event/getDashboardEvents'
       );
       console.log(response.data);
-      setEvents(response.data);
+      // if(Array.isArray(response.data))
+        setEvents(response.data);
     } catch (error) {
       console.log(error);
     }
